@@ -1,8 +1,8 @@
 import { FaLinkedin, FaGithub, FaTwitter, FaInstagram, FaFacebook } from 'react-icons/fa';
 
 const socialMedia = [
-  { id: 1, name: 'LinkedIn', url: 'https://www.linkedin.com/', icon: <FaLinkedin color="#0A66C2" /> },
-  { id: 2, name: 'GitHub', url: 'https://github.com/', icon: <FaGithub color="#333" /> },
+  { id: 1, name: 'LinkedIn', url: 'https://www.linkedin.com/in/alex-karobia-510a17264/', icon: <FaLinkedin color="#0A66C2" /> },
+  { id: 2, name: 'GitHub', url: 'https://github.com/karoshalex0873', icon: <FaGithub color="#333" /> },
   { id: 3, name: 'Twitter', url: 'https://twitter.com/', icon: <FaTwitter color="#1DA1F2" /> },
   { id: 4, name: 'Instagram', url: 'https://www.instagram.com/', icon: <FaInstagram color="#E1306C" /> },
   { id: 5, name: 'Facebook', url: 'https://www.facebook.com/', icon: <FaFacebook color="#1877F2" /> },
