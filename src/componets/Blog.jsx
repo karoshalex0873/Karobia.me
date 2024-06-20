@@ -58,6 +58,7 @@ const Blog = () => {
                         <div className="text-right">
                           <span className="text-xs font-medium ">
                             {hoveredSkill === data.id ? `${data.level}%` : ''}
+
                           </span>
                         </div>
                       </div>
@@ -76,7 +77,7 @@ const Blog = () => {
                   </div>
                 ))}
               </div>
-            </div>
+            </div> 
           </div>
           <h1 className="text-center text-xl font-bold mt-10">
               <a
