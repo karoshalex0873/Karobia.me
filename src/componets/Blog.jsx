@@ -40,14 +40,14 @@ const Blog = () => {
             </div>
             <div className="relative">
               <div className="lg:center-line sm:opacity-0"></div>
-              <div className="flex flex-wrap justify-center gap-5 md:gap-8">
+              <div className="flex flex-wrap  justify-start gap-5 md:gap-8">
                 {Skill.map((data, index) => (
                   <div
                     key={index}
                     className="transform transition duration-500 hover:scale-105 relative"
                     onMouseEnter={() => handleSkillHover(data.id)}
                     onMouseLeave={handleSkillLeave}
-                    style={{ maxWidth: '200px' }}
+                    style={{ maxWidth: '200px'}}
                   >
                     <div className="mb-20 shadow-xl text-center hover:text-white hover:bg-primary max-w-[200px] h-[auto] rounded-3xl p-4">
                       <div className="w-16 h-16 mx-auto mb-4 text-5xl">
