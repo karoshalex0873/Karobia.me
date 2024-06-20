@@ -22,7 +22,7 @@ const Chatbox = () => {
         </button>
       )}
       {isOpen && (
-        <div className="bg-white w-80 h-96 shadow-lg rounded-lg p-4">
+        <div className="bg-white w-80 h-96 shadow-lg rounded-lg p-4 sm:px-10">
           {/* Chat interface content */}
           <div className="flex items-center justify-between mb-4">
             <h2 className="text-lg font-bold text-gray-800">Chat</h2>

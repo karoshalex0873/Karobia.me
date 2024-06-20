@@ -48,7 +48,7 @@ const About = () => {
            </h1>
            </div>
            {/*Abou me   */}
-           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-15 md:gap-5 place-items-center">
+           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-15 md:gap-5 place-items-center ">
             {
                 AboutData.map((data,index)=>{
                     return(
