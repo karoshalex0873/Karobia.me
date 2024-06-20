@@ -36,7 +36,6 @@ const Blog = () => {
           </div>
           <div>
             <div className="text-center mb-0 py-8">
-              <h2 className="text-2xl font-bold text-gray-800">Skills</h2>
             </div>
             <div className="relative">
               <div className="lg:center-line sm:opacity-0"></div>
@@ -47,7 +46,7 @@ const Blog = () => {
                     className="transform transition duration-500 hover:scale-105 relative"
                     onMouseEnter={() => handleSkillHover(data.id)}
                     onMouseLeave={handleSkillLeave}
-                    style={{ maxWidth: '200px'}}
+                    style={{ maxWidth: '200px', maxHeight:'300px'}}
                   >
                     <div className="mb-20 shadow-xl text-center hover:text-white hover:bg-primary max-w-[200px] h-[auto] rounded-3xl p-4">
                       <div className="w-16 h-16 mx-auto mb-4 text-5xl">
