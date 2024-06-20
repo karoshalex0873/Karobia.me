@@ -56,7 +56,7 @@ const Blog = () => {
                     <div className="relative">
                       <div className="flex items-center justify-between mb-2">
                         <div className="text-right">
-                          <span className="text-xs font-medium text-gray-800">
+                          <span className="text-xs font-medium text-white">
                             {hoveredSkill === data.id ? `${data.level}%` : 'Hover to see level'}
                           </span>
                         </div>
