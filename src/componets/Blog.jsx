@@ -63,11 +63,10 @@ const Blog = () => {
                       </div>
                         <div className="overflow-hidden h-2 mb-4 text-xs flex rounded bg-gray-200">
                         <div
-                          style={{ width: '100%' }} // Fixed width for the bar
-                          className={`h-full bg-gradient-to-r from-secondary to-primary transition-width duration-1000 ease-out ${hoveredSkill === data.id ? 'opacity-100' : 'opacity-0'}`}
+                          className={`h-full w-32 bg-gradient-to-r from-secondary to-primary transition-width duration-1000 ease-out ${hoveredSkill === data.id ? 'opacity-100' : 'opacity-0'}`}
                         >
                           <div
-                            style={{ width: `${hoveredSkill === data.id ? data.level : 0}%` }}
+                            style={{ width: `${'' === data.id ? data.level : 0}%` }}
                             className="h-full"
                           ></div>
                         </div>
