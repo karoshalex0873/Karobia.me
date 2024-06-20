@@ -7,21 +7,7 @@ const projectData=[
      name:"Agro-Market-bridge",
      link:"https://www.instagram.com/tetrag_arts?igsh=MWVsZm1iOHB3cHJlMw%3D%3D&utm_source=qr",
      description:"It is Platform that directly links a farmer to customer .Main aim is to eliminate the brokers in the chan and maximizing farmers of selling goods"
-    },
-    {
-        id:2,
-        name:"Tesla blog",
-        img:'commming soon not yet completed',
-        link:"#",
-        description:"It is a documentation of nikola tesla who  inveted almost 80% of the Technology used to day.It narrates his story from child upto his death"
-    },
-    {
-        id:3,
-        name:"Cosmetic Plafform",
-        img:'',
-        link:"#",
-        description:"Comming Soon"
-    },
+    }
 ];
 const Projects = () => {
   return (
