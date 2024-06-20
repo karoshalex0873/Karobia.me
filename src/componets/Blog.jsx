@@ -52,7 +52,7 @@ const Blog = () => {
                       {data.icon}
                     </div>
                     <h1 className="font-bold text-lg text-center mb-2">{data.name}</h1>
-                    <p className="text-sm text-gray-600 mb-4">{data.description}</p>
+                    <p className="text-sm text-white/80 mb-4">{data.description}</p>
                     <div className="relative">
                       <div className="flex items-center justify-between mb-2">
                         <div className="text-right">
