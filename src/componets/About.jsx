@@ -56,7 +56,7 @@ const About = () => {
                     data-aos="fade-up"
                     data-aos-delay={data.aosDelay}
                     key={index} className=" rounded-2xl bg-white hover:bg-secondary hover:text-white shadow-xl duration-200 max-w-[300px] group relative sm:py-5">
-                        <div className="p-4 text-center">
+                        <div className="p-4 text-center py-10">
                             <h1 className="text-xl font-bold">{data.category}</h1>
                             <p className="text-gray-500 group-hover:text-white duration-300 text-sm line-clamp-2">{data.description}</p> 
                         </div>
