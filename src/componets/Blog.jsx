@@ -43,7 +43,7 @@ const Blog = () => {
                 {Skill.map((data, index) => (
                   <div
                     key={index}
-                    className="transform transition duration-500 hover:scale-105 relative text-white rounded-xl shadow-md p-4 flex flex-col items-center justify-center bg-darkBrand"
+                    className="transform transition duration-500 hover:scale-105 relative text-darkBrand rounded-xl shadow-md p-4 flex flex-col items-center justify-center "
                     onMouseEnter={() => handleSkillHover(data.id)}
                     onMouseLeave={handleSkillLeave}
                     style={{ maxWidth: '300px', minWidth: '250px' }} // Adjusting maximum and minimum width
