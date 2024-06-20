@@ -18,11 +18,11 @@ const Chatbox = () => {
           className="bg-white text-secondary rounded-full lg:p-4 p-2 shadow-lg hover:bg-opacity-80 transition duration-300"
           onClick={toggleChatbox}
         >
-          <FaComments className="lg:text-3xl text-xs"  />
+          <FaComments className="lg:text-3xl text-xs" />
         </button>
       )}
       {isOpen && (
-        <div className="bg-white w-80 h-96 shadow-lg rounded-lg px-10">
+        <div className="bg-white lg:w-80 lg:h-96 w-full h-64 lg:shadow-lg shadow-md rounded-lg px-4 lg:px-10">
           {/* Chat interface content */}
           <div className="flex items-center justify-between mb-4">
             <h2 className="text-lg font-bold text-gray-800">Chat</h2>
@@ -33,7 +33,7 @@ const Chatbox = () => {
               Close
             </button>
           </div>
-          <div className="h-64 overflow-y-auto">
+          <div className="h-48 lg:h-64 overflow-y-auto">
             {/* Messages or chat history */}
             <div className="my-2">
               <div className="bg-gray-100 rounded-lg p-2">
