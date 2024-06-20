@@ -57,17 +57,17 @@ const Blog = () => {
                       <div className="flex items-center justify-between mb-2">
                         <div className="text-right">
                           <span className="text-xs font-medium text-white">
-                            {hoveredSkill === data.id ? `${data.level}%` : 'Hover to see level'}
+                            {hoveredSkill === data.id ? `${data.level}%` : ''}
                           </span>
                         </div>
                       </div>
                         <div className="overflow-hidden h-2 mb-4 text-xs flex rounded bg-gray-200">
                         <div
-                          className={`h-full w-32 bg-gradient-to-r from-secondary to-primary transition-width duration-1000 ease-out ${hoveredSkill === data.id ? 'opacity-100' : 'opacity-0'}`}
+                          className={`h-full  bg-gradient-to-r from-secondary to-primary transition-width duration-1000 ease-out ${hoveredSkill === data.id ? 'opacity-100' : 'opacity-0'}`}
                         >
                           <div
                             style={{ width: `${'' === data.id ? data.level : 0}%` }}
-                            className="h-full"
+                            className="h-full "
                           ></div>
                         </div>
                       </div>
