@@ -61,23 +61,31 @@ const Blog = () => {
                           </span>
                         </div>
                       </div>
-                      <div className="overflow-hidden h-2 mb-4 text-xs flex rounded bg-gray-200">
+                        <div className="overflow-hidden h-2 mb-4 text-xs flex rounded bg-gray-200">
                         <div
-                          style={{ width: `${hoveredSkill === data.id ? data.level : 0}%` }}
+                          style={{ width: '100%' }} // Fixed width for the bar
                           className={`h-full bg-gradient-to-r from-secondary to-primary transition-width duration-1000 ease-out ${hoveredSkill === data.id ? 'opacity-100' : 'opacity-0'}`}
-                        ></div>
+                        >
+                          <div
+                            style={{ width: `${hoveredSkill === data.id ? data.level : 0}%` }}
+                            className="h-full"
+                          ></div>
+                        </div>
                       </div>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
-            <h1 className="text-center text-xl font-bold">
-              <a href="https://www.instagram.com/" className="bg-gradient-to-r from-secondary to-primary border-2 border-secondary rounded-full px-4 py-2 text-white hover:scale-105 duration-200 cursor-pointer">
+          </div>
+          <h1 className="text-center text-xl font-bold">
+              <a
+                href="https://www.instagram.com/"
+                className="text-secondary hover:text-primary border-b-2 border-transparent hover:border-primary hover:scale-105 duration-200 cursor-pointer"
+              >
                 My blog
               </a>
-            </h1>
-          </div>
+         </h1>
         </div>
       </div>
     </>
