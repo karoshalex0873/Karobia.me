@@ -77,7 +77,7 @@ const Blog = () => {
               </div>
             </div>
           </div>
-          <h1 className="text-center text-xl font-bold">
+          <h1 className="text-center text-xl font-bold mt-10">
               <a
                 href="https://www.instagram.com/"
                 className="text-secondary hover:text-primary border-b-2 border-transparent hover:border-primary hover:scale-105 duration-200 cursor-pointer"
