@@ -4,7 +4,7 @@ import { SiTailwindcss, SiNextdotjs, SiThreedotjs, SiMongodb, SiExpress } from '
 
 const Skill = [
   { id: 1, name: 'HTML', description: 'HyperText Markup Language used for structuring web content.', level: 90, icon: <FaHtml5 className="text-orange-500" /> },
-  { id: 2, name: 'CSS', description: 'Cascading Style Sheets used for styling web pages.', level: 2, icon: <FaCss3Alt className="text-blue-500" /> },
+  { id: 2, name: 'CSS', description: 'Cascading Style Sheets used for styling web pages.', level: 80, icon: <FaCss3Alt className="text-blue-500" /> },
   { id: 3, name: 'JavaScript', description: 'Programming language for web development, enabling interactive elements.', level: 85, icon: <FaJs className="text-yellow-500" /> },
   { id: 4, name: 'Tailwind CSS', description: 'Utility-first CSS framework for rapid UI development.', level: 75, icon: <SiTailwindcss className="text-blue-400" /> },
   { id: 5, name: 'React js', description: 'JavaScript library for building user interfaces.', level: 80, icon: <FaReact className="text-blue-600" /> },
@@ -48,7 +48,7 @@ const Blog = () => {
                     onMouseLeave={handleSkillLeave}
                     style={{ maxWidth: '300px', minWidth: '250px' }} // Adjusting maximum and minimum width
                   >
-                    <div className="mb-4 mx-auto text-3xl text-primary">
+                    <div className="mb-4 mx-auto text-3xl text-white bg-darkBrand hover:bg-secondary">
                       {data.icon}
                     </div>
                     <h1 className="font-bold text-lg text-center mb-2">{data.name}</h1>
