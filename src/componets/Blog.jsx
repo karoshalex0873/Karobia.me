@@ -69,7 +69,8 @@ const Blog = () => {
                       >
                         <div
                           style={{ width: `${hoveredSkill === data.id ? data.level : 0}%` }}
-                          className={`h-full bg-gradient-to-r from-secondary to-primary ${hoveredSkill === data.id ? 'opacity-100' : 'opacity-0'}`}
+                          className={`h-full bg-gradient-to-r from-secondary to-primary transition-width duration-1000 ease-out
+                              ${hoveredSkill === data.id ? 'opacity-100' : 'opacity-0'}`}
                         ></div>
                       </div>
                     </div>
