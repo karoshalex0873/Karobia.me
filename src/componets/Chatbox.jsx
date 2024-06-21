@@ -22,7 +22,7 @@ const Chatbox = () => {
           </button>
         )}
         {isOpen && (
-          <div className="bg-white lg:w-69 lg:h-76 w-full h-64 lg:shadow-lg shadow-md rounded-lg px-4 lg:px-10">
+          <div className="bg-white lg:w-96 lg:h-96 w-full h-64 lg:shadow-lg shadow-md rounded-lg px-4 lg:px-10 py-4">
             {/* Chat interface content */}
             <div className="flex items-center justify-between mb-4">
               <h2 className="text-lg font-bold text-gray-800">Chat</h2>
@@ -42,15 +42,15 @@ const Chatbox = () => {
               </div>
             </div>
             {/* Chat input */}
-            <form className="mt-4">
+            <form className="mt-4 flex">
               <input
                 type="text"
                 placeholder="Type your message..."
-                className="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary"
+                className="flex-grow p-2 border rounded-l-lg focus:outline-none focus:ring-2 focus:ring-secondary"
               />
               <button
                 type="submit"
-                className="mt-2 bg-secondary text-white rounded-lg px-4 py-2 hover:bg-opacity-80 transition duration-300"
+                className="bg-secondary text-white rounded-r-lg px-4 py-2 hover:bg-opacity-80 transition duration-300"
               >
                 Send
               </button>
