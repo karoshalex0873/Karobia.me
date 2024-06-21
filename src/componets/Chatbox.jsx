@@ -1,41 +1,45 @@
 import { useState } from 'react';
 import { FaComments } from 'react-icons/fa';
+import openai from 'openai';
+
+openai.apiKey = 'your_openai_api_key_here';
 
 const Chatbox = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([]);
   const [userInput, setUserInput] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
   const toggleChatbox = () => {
     setIsOpen(!isOpen);
   };
 
-  const getAIResponse = (message) => {
-    const responses = {
-      hello: "Hello! How can I assist you today?",
-      name: "My name is karobiaBot. I'm here to help you with any questions you have.",
-      skills: "I am skilled in HTML, CSS, JavaScript, React, Next.js, Three.js, Python & Django, MongoDB, and Express.",
-      contact: "You can reach me at my email: example@example.com.",
-      blog: "You can visit my blog at https://www.instagram.com/",
-    };
-
-    const lowerCaseMessage = message.toLowerCase();
-    for (const key in responses) {
-      if (lowerCaseMessage.includes(key)) {
-        return responses[key];
-      }
+  const getAIResponseFromAPI = async (message) => {
+    try {
+      const response = await openai.Completion.create({
+        engine: 'davinci-codex',
+        prompt: message,
+        maxTokens: 150,
+        temperature: 0.7,
+      });
+      return response.choices[0].text.trim();
+    } catch (error) {
+      console.error('Error calling OpenAI API:', error);
+      return "Sorry, I couldn't process your request. Please try again later.";
     }
-
-    return "I'm sorry, I didn't understand that. Can you please ask something else?";
   };
 
-  const handleSendMessage = (e) => {
+  const handleSendMessage = async (e) => {
     e.preventDefault();
     if (userInput.trim()) {
       const userMessage = { text: userInput, sender: 'user' };
-      const aiMessage = { text: getAIResponse(userInput), sender: 'ai' };
-      setMessages([...messages, userMessage, aiMessage]);
+      setMessages([...messages, userMessage]);
       setUserInput('');
+      setIsLoading(true);
+
+      const aiMessage = { text: await getAIResponseFromAPI(userInput), sender: 'ai' };
+      setMessages((prevMessages) => [...prevMessages, aiMessage]);
+      setIsLoading(false);
     }
   };
 
@@ -73,6 +77,13 @@ const Chatbox = () => {
                   </div>
                 </div>
               ))}
+              {isLoading && (
+                <div className="text-left my-2">
+                  <div className="inline-block bg-gray-100 text-gray-800 rounded-lg p-2">
+                    <p className="text-sm">Loading...</p>
+                  </div>
+                </div>
+              )}
             </div>
             {/* Chat input */}
             <form className="mt-4 flex" onSubmit={handleSendMessage}>
