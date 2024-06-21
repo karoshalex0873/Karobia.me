@@ -53,7 +53,7 @@ const Blog = () => {
                     </div>
                     <h1 className="font-bold text-lg text-center mb-2">{data.name}</h1>
                     <p className="text-sm  mb-4">{data.description}</p>
-                    <div className="relative">
+                    <div className="relative" style={{ width: '75%' }}> {/* Adjusted width */}
                       <div className="flex items-center justify-between mb-2">
                         <div className="text-right">
                           <span className="text-xs font-medium ">
@@ -63,17 +63,12 @@ const Blog = () => {
                         </div>
                       </div>
                       <div className="overflow-hidden h-2 mb-4 text-xs flex rounded bg-gray-200">
-                      <div
-                        className="h-full transition-width duration-1000 ease-out"
-                        style={{ width: '32px' }} // Fixed width for the outer container
-                      >
                         <div
                           style={{ width: `${hoveredSkill === data.id ? data.level : 0}%` }}
                           className={`h-full bg-gradient-to-r from-secondary to-primary transition-width duration-1000 ease-out 
                               ${hoveredSkill === data.id ? 'opacity-100' : 'opacity-0'}`}
                         ></div>
                       </div>
-                    </div>
                     </div>
                   </div>
                 ))}
