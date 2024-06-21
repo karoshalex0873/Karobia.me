@@ -52,8 +52,8 @@ const Blog = () => {
                       {data.icon}
                     </div>
                     <h1 className="font-bold text-lg text-center mb-2">{data.name}</h1>
-                    <p className="text-sm  mb-4">{data.description}</p>
-                    <div className="relative" style={{ width: '75%' }}> {/* Adjusted width */}
+                    <p className="text-sm  text-start mb-4">{data.description}</p>
+                    <div className="relative w-20" > {/* Adjusted width */}
                       <div className="flex items-center justify-between mb-2">
                         <div className="text-right">
                           <span className="text-xs font-medium ">
