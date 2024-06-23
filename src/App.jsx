@@ -4,7 +4,7 @@ import About from "./componets/About"
 import Projects from "./componets/Projects"
 import ContactForm from "./componets/Contact"
 import SocialMediaLinks from "./componets/SocialMediaLinks"
-// import Chatbox from "./componets/Chatbox"
+import Chatbox from "./componets/Chatbox"
 
 const App = () => {
   return (
@@ -24,7 +24,7 @@ const App = () => {
         </div>
       </div>
       <div className="container mx-auto px-4 md:px-6 py-10">
-       {/* <Chatbox /> */}
+        <Chatbox /> 
       </div>
     </div>
   );
