@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { FaComments } from 'react-icons/fa';
 import openai from 'openai';
 
-openai.apiKey = 'sk-proj-4eBIQclmPM1hFqvHRl6vT3BlbkFJPZYWvsRj665QnyRuGGmw';
+// openai.apiKey = 'sk-proj-4eBIQclmPM1hFqvHRl6vT3BlbkFJPZYWvsRj665QnyRuGGmw';
 
 // Sample data to use for generating responses
 const myData = {
