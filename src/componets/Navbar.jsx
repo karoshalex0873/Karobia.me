@@ -22,11 +22,11 @@ const Menu = [
     name: 'Reach Out',
     link: '#reach_out',
   },
-  // {
-  //   id: 5,
-  //   name: 'KarobiaBot',
-  //   link: '#karobiaBot',
-  // },
+  {
+    id: 5,
+    name: 'KarobiaBot',
+    link: '#karobiaBot',
+  },
 ];
 
 const Navbar = () => {
