@@ -1,52 +1,60 @@
 import { useState } from 'react';
 import { FaComments } from 'react-icons/fa';
+import openai from 'openai';
 
-const predefinedResponses = {
-  greeting: "Hello! How can I assist you today?",
+openai.apiKey = 'sk-proj-4eBIQclmPM1hFqvHRl6vT3BlbkFJPZYWvsRj665QnyRuGGmw';
+
+// Sample data to use for generating responses
+const myData = {
   introduction: "Hello! I'm KarobiaBot, your virtual assistant.",
   services: "I can help you with a variety of tasks, including answering questions, providing information, and guiding you through processes.",
-  contact: "You can reach us at contact@karobia.me.",
-  resume: "Please request in the Contact section and you will have it.",
-  default: "I'm sorry, I don't understand that question. Can you please rephrase?",
-};
-
-const getResponse = (message) => {
-  const lowerCaseMessage = message.toLowerCase();
-  if (lowerCaseMessage.includes('hello') || lowerCaseMessage.includes('hi')) {
-    return predefinedResponses.greeting;
-  }
-  if (lowerCaseMessage.includes('introduce') || lowerCaseMessage.includes('who are you')) {
-    return predefinedResponses.introduction;
-  }
-  if (lowerCaseMessage.includes('service') || lowerCaseMessage.includes('help')) {
-    return predefinedResponses.services;
-  }
-  if (lowerCaseMessage.includes('contact')) {
-    return predefinedResponses.contact;
-  }
-  if (lowerCaseMessage.includes('resume')) {
-    return predefinedResponses.resume;
-  }
-  return predefinedResponses.default;
+  resume:"Please Request in Contact section and You will have it",
+  
 };
 
 const Chatbox = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([]);
   const [userInput, setUserInput] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
   const toggleChatbox = () => {
     setIsOpen(!isOpen);
   };
 
-  const handleSendMessage = (e) => {
+  const getAIResponseFromAPI = async (message) => {
+    const prompt = `
+      You are KarobiaBot, a helpful assistant. Use the provided data to answer questions.
+      Data: ${JSON.stringify(myData)}
+
+      User: ${message}
+      KarobiaBot:
+    `;
+    try {
+      const response = await openai.Completion.create({
+        engine: 'davinci-codex',
+        prompt: prompt,
+        maxTokens: 150,
+        temperature: 0.7,
+      });
+      return response.choices[0].text.trim();
+    } catch (error) {
+      console.error('Error calling OpenAI API:', error);
+      return "Sorry, I couldn't process your request. Please try again later.";
+    }
+  };
+
+  const handleSendMessage = async (e) => {
     e.preventDefault();
     if (userInput.trim()) {
       const userMessage = { text: userInput, sender: 'user' };
       setMessages([...messages, userMessage]);
-      const aiMessage = { text: getResponse(userInput), sender: 'ai' };
-      setMessages((prevMessages) => [...prevMessages, aiMessage]);
       setUserInput('');
+      setIsLoading(true);
+
+      const aiMessage = { text: await getAIResponseFromAPI(userInput), sender: 'ai' };
+      setMessages((prevMessages) => [...prevMessages, aiMessage]);
+      setIsLoading(false);
     }
   };
 
@@ -82,6 +90,13 @@ const Chatbox = () => {
                   </div>
                 </div>
               ))}
+              {isLoading && (
+                <div className="text-left my-2">
+                  <div className="inline-block bg-gray-100 text-gray-800 rounded-lg p-2">
+                    <p className="text-sm">Loading...</p>
+                  </div>
+                </div>
+              )}
             </div>
             <form className="mt-4 flex" onSubmit={handleSendMessage}>
               <input
