@@ -1,16 +1,19 @@
-import { useState } from 'react';
+import  { useState } from 'react';
 import { FaComments } from 'react-icons/fa';
-import openai from 'openai';
-
-openai.apiKey = 'sk-proj-4eBIQclmPM1hFqvHRl6vT3BlbkFJPZYWvsRj665QnyRuGGmw';
+import { Configuration, OpenAIApi } from 'openai';
 
 // Sample data to use for generating responses
 const myData = {
   introduction: "Hello! I'm KarobiaBot, your virtual assistant.",
   services: "I can help you with a variety of tasks, including answering questions, providing information, and guiding you through processes.",
-  resume:"Please Request in Contact section and You will have it",
-  
+  resume: "Please request in the Contact section and you will have it",
 };
+
+// Set up OpenAI API configuration
+const configuration = new Configuration({
+  apiKey: process.env.REACT_APP_OPENAI_API_KEY,
+});
+const openai = new OpenAIApi(configuration);
 
 const Chatbox = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,13 +34,13 @@ const Chatbox = () => {
       KarobiaBot:
     `;
     try {
-      const response = await openai.Completion.create({
-        engine: 'davinci-codex',
+      const response = await openai.createCompletion({
+        model: 'text-davinci-003',
         prompt: prompt,
-        maxTokens: 150,
+        max_tokens: 150,
         temperature: 0.7,
       });
-      return response.choices[0].text.trim();
+      return response.data.choices[0].text.trim();
     } catch (error) {
       console.error('Error calling OpenAI API:', error);
       return "Sorry, I couldn't process your request. Please try again later.";
