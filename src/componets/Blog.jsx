@@ -1,3 +1,5 @@
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
 import { useState } from 'react';
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaPython } from 'react-icons/fa';
 import { SiTailwindcss, SiNextdotjs, SiThreedotjs, SiMongodb, SiExpress } from 'react-icons/si';
@@ -25,7 +27,9 @@ const Blog = () => {
   const handleSkillLeave = () => {
     setHoveredSkill(null);
   };
-
+useGSAP(()=>{
+  gsap.to('')
+})
   return (
     <>
       <span id="blog"></span>
@@ -39,7 +43,8 @@ const Blog = () => {
             </div>
             <div className="relative">
               <div className="lg:center-line sm:opacity-0"></div>
-              <div className="flex flex-wrap justify-center gap-5 md:gap-8">
+  
+              <div id='Cards' className="flex flex-wrap justify-center gap-5 md:gap-8 opacity-0">
                 {Skill.map((data, index) => (
                   <div
                     key={index}

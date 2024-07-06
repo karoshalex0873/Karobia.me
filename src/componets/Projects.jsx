@@ -1,12 +1,11 @@
-import img2 from "../assets/img3.png"
-
+import Supercar from '../assets/Super Cars.png'
 const projectData=[
     {
      id:1,
-     img:img2,
-     name:"Agro-Market-bridge",
-     link:"https://www.instagram.com/tetrag_arts?igsh=MWVsZm1iOHB3cHJlMw%3D%3D&utm_source=qr",
-     description:"It is Platform that directly links a farmer to customer .Main aim is to eliminate the brokers in the chan and maximizing farmers of selling goods"
+     img:Supercar,
+     name:"Super Car Market",
+     link:"https://super-car-seven.vercel.app/",
+     description:"A react  and three js peroject that advertise the sale of super cars"
     }
 ];
 const Projects = () => {
