@@ -32,27 +32,27 @@ const Blog = () => {
       <div className="py-10">
         <div className="container mx-auto relative">
           <div className="text-center mb-0">
-            <h1 className="Main-heading">Skills and Blog</h1>
+            <h1 className="Main-heading">Skills</h1>
           </div>
           <section>
             <div className="text-center mb-0 py-8"></div>
             <div className="relative">
               <div className="lg:center-line sm:opacity-0"></div>
-              <div id='Cards' className="flex flex-wrap justify-center gap-5 md:gap-8 opacity-0">
+              <div id='Cards' className="flex flex-wrap justify-center gap-4 md:gap-6">
                 {skills.map((skill) => (
                   <article
                     key={skill.id}
-                    className="transform transition duration-500 hover:scale-105 relative text-white bg-gradient-to-b from-secondary to-darkBrand rounded-xl shadow-md p-4 flex flex-col items-center justify-center"
+                    className="transform transition duration-500 hover:scale-105 relative text-white bg-gradient-to-b from-secondary to-darkBrand rounded-xl shadow-md p-3 flex flex-col items-center justify-center"
                     onMouseEnter={() => handleSkillHover(skill.id)}
                     onMouseLeave={handleSkillLeave}
-                    style={{ maxWidth: '300px', minWidth: '250px' }}
+                    style={{ maxWidth: '250px', minWidth: '200px' }}
                   >
-                    <div className="mb-4 mx-auto text-3xl text-primary">
+                    <div className="mb-3 mx-auto text-3xl text-primary">
                       {skill.icon}
                     </div>
                     <h1 className="font-bold text-lg text-center mb-2">{skill.name}</h1>
-                    <p className="text-sm text-start mb-4">{skill.description}</p>
-                    <div className="relative w-20">
+                    <p className="text-sm text-start mb-3">{skill.description}</p>
+                    <div className="relative w-16">
                       <div className="flex items-center justify-between mb-2">
                         <div className="text-right">
                           <span className="text-xs font-medium">
@@ -73,14 +73,6 @@ const Blog = () => {
               </div>
             </div>
           </section>
-          <h1 className="text-center text-xl font-bold mt-10">
-            <a
-              href="https://www.instagram.com/"
-              className="text-secondary hover:text-primary border-b-2 border-transparent hover:border-primary hover:scale-105 duration-200 cursor-pointer"
-            >
-              My blog
-            </a>
-          </h1>
         </div>
       </div>
     </>
