@@ -1,5 +1,3 @@
-import { useGSAP } from '@gsap/react';
-import gsap from 'gsap';
 import { useState } from 'react';
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaPython } from 'react-icons/fa';
 import { SiTailwindcss, SiNextdotjs, SiThreedotjs, SiMongodb, SiExpress } from 'react-icons/si';
@@ -27,9 +25,7 @@ const Blog = () => {
   const handleSkillLeave = () => {
     setHoveredSkill(null);
   };
-useGSAP(()=>{
-  gsap.to('')
-})
+
   return (
     <>
       <span id="blog"></span>
