@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaPython } from 'react-icons/fa';
 import { SiTailwindcss, SiNextdotjs, SiThreedotjs, SiMongodb, SiExpress } from 'react-icons/si';
 
-const Skill = [
+const skills = [
   { id: 1, name: 'HTML', description: 'HyperText Markup Language used for structuring web content.', level: 90, icon: <FaHtml5 className="text-orange-500" /> },
   { id: 2, name: 'CSS', description: 'Cascading Style Sheets used for styling web pages.', level: 80, icon: <FaCss3Alt className="text-blue-500" /> },
   { id: 3, name: 'JavaScript', description: 'Programming language for web development, enabling interactive elements.', level: 85, icon: <FaJs className="text-yellow-500" /> },
@@ -34,56 +34,53 @@ const Blog = () => {
           <div className="text-center mb-0">
             <h1 className="Main-heading">Skills and Blog</h1>
           </div>
-          <div>
-            <div className="text-center mb-0 py-8">
-            </div>
+          <section>
+            <div className="text-center mb-0 py-8"></div>
             <div className="relative">
               <div className="lg:center-line sm:opacity-0"></div>
-  
               <div id='Cards' className="flex flex-wrap justify-center gap-5 md:gap-8 opacity-0">
-                {Skill.map((data, index) => (
-                  <div
-                    key={index}
-                    className="transform transition duration-500 hover:scale-105 relative text-white bg-gradient-to-b from-secondary to-darkBrand rounded-xl shadow-md p-4 flex flex-col items-center justify-center "
-                    onMouseEnter={() => handleSkillHover(data.id)}
+                {skills.map((skill) => (
+                  <article
+                    key={skill.id}
+                    className="transform transition duration-500 hover:scale-105 relative text-white bg-gradient-to-b from-secondary to-darkBrand rounded-xl shadow-md p-4 flex flex-col items-center justify-center"
+                    onMouseEnter={() => handleSkillHover(skill.id)}
                     onMouseLeave={handleSkillLeave}
-                    style={{ maxWidth: '300px', minWidth: '250px' }} // Adjusting maximum and minimum width
+                    style={{ maxWidth: '300px', minWidth: '250px' }}
                   >
                     <div className="mb-4 mx-auto text-3xl text-primary">
-                      {data.icon}
+                      {skill.icon}
                     </div>
-                    <h1 className="font-bold text-lg text-center mb-2">{data.name}</h1>
-                    <p className="text-sm  text-start mb-4">{data.description}</p>
-                    <div className="relative w-20" > {/* Adjusted width */}
+                    <h1 className="font-bold text-lg text-center mb-2">{skill.name}</h1>
+                    <p className="text-sm text-start mb-4">{skill.description}</p>
+                    <div className="relative w-20">
                       <div className="flex items-center justify-between mb-2">
                         <div className="text-right">
-                          <span className="text-xs font-medium ">
-                            {hoveredSkill === data.id ? `${data.level}%` : ''}
-
+                          <span className="text-xs font-medium">
+                            {hoveredSkill === skill.id ? `${skill.level}%` : ''}
                           </span>
                         </div>
                       </div>
                       <div className="overflow-hidden h-2 mb-4 text-xs flex rounded bg-gray-200">
                         <div
-                          style={{ width: `${hoveredSkill === data.id ? data.level : 0}%` }}
+                          style={{ width: `${hoveredSkill === skill.id ? skill.level : 0}%` }}
                           className={`h-full bg-gradient-to-r from-secondary to-primary transition-width duration-1000 ease-out 
-                              ${hoveredSkill === data.id ? 'opacity-100' : 'opacity-0'}`}
+                            ${hoveredSkill === skill.id ? 'opacity-100' : 'opacity-0'}`}
                         ></div>
                       </div>
                     </div>
-                  </div>
+                  </article>
                 ))}
               </div>
-            </div> 
-          </div>
+            </div>
+          </section>
           <h1 className="text-center text-xl font-bold mt-10">
-              <a
-                href="https://www.instagram.com/"
-                className="text-secondary hover:text-primary border-b-2 border-transparent hover:border-primary hover:scale-105 duration-200 cursor-pointer"
-              >
-                My blog
-              </a>
-         </h1>
+            <a
+              href="https://www.instagram.com/"
+              className="text-secondary hover:text-primary border-b-2 border-transparent hover:border-primary hover:scale-105 duration-200 cursor-pointer"
+            >
+              My blog
+            </a>
+          </h1>
         </div>
       </div>
     </>
