@@ -19,40 +19,43 @@ const Main = () => {
       </div>
 
       {/* Icons on the right with animation */}
-      <div className="fixed right-0 top-0 w-[40px] lg:w-[80] h-full bg-gradient-to-b from-primary to-secondary flex flex-col justify-center items-center gap-4 p-2 z-20 transition-transform duration-300 ease-in-out transform hover:translate-x-0 animate-fade-in">
+      <div 
+      data-aos="fade-up"
+      data-aos-delay="300"
+      className="fixed right-0 top-0 w-[40px] lg:w-[80] h-full flex flex-col justify-center items-center gap-4 p-2 z-20 transition-transform duration-300 ease-in-out transform hover:translate-x-0 animate-fade-in ">
         <a
           href="https://facebook.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block p-2 rounded-full cursor-pointer border border-white hover:bg-white hover:text-primary transition-colors duration-300"
+          className="inline-block p-2 rounded-full cursor-pointer border border-secondary hover:bg-white hover:text-primary transition-colors duration-300"
         >
-          <FaFacebookF className="text-2xl text-white w-[20] h-auto" />
+          <FaFacebookF className="text-xl  text-secondary" />
         </a>
         <a
           href="https://instagram.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block p-2 rounded-full cursor-pointer border border-white hover:bg-white hover:text-primary transition-colors duration-300"
+          className="inline-block p-2 rounded-full cursor-pointer border border-primary hover:bg-white hover:text-primary transition-colors duration-300"
         >
-          <FaInstagram className="text-2xl text-white" />
+          <FaInstagram className="text-xl text-secondary" />
         </a>
         <a
           href="https://linkedin.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block p-2 rounded-full cursor-pointer border border-white hover:bg-white hover:text-primary transition-colors duration-300"
+          className="inline-block p-2 rounded-full cursor-pointer border border-secondary hover:bg-white hover:text-primary transition-colors duration-300"
         >
-          <FaLinkedinIn className="text-2xl text-white" />
+          <FaLinkedinIn className="text-xl text-secondary" />
         </a>
       </div>
 
-      <div className="container px-6 py-12 mx-auto relative mt-20">
+      <div className="container lg:px-6 px-10 py-12 mx-auto relative mt-20">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
           {/* Text content section */}
-          <div className="text-center md:text-left">
+          <div className="text-start lg:text-center md:text-left">
             <h1
               data-aos="fade-right"
-              className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-4"
+              className="text-5xl sm:text-6xl lg:text-7xl font-bold "
             >
               I am, Karobia Alex <span className="text-secondary">Software Developer</span>
             </h1>
@@ -61,7 +64,7 @@ const Main = () => {
               data-aos-delay="300"
               className="text-lg sm:text-xl mb-6"
             >
-              I specialize in creating stunning and functional digital experiences. <br />Let's connect and build something great together.
+              I specialize in creating stunning and functional digital Web apps. <br />Let's connect and build something great together.
             </p>
             <div
               data-aos="fade-up"
