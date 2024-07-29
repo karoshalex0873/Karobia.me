@@ -1,8 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaPython } from 'react-icons/fa';
 import { SiTailwindcss, SiNextdotjs, SiThreedotjs, SiMongodb, SiExpress } from 'react-icons/si';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 const skills = [
   { id: 1, name: 'HTML', description: 'HyperText Markup Language used for structuring web content.', level: 90, icon: <FaHtml5 className="text-orange-500" /> },
@@ -19,6 +21,7 @@ const skills = [
 
 const Blog = () => {
   const [hoveredSkill, setHoveredSkill] = useState(null);
+  const lineRef = useRef(null);
 
   useEffect(() => {
     AOS.init({
@@ -35,6 +38,20 @@ const Blog = () => {
     setHoveredSkill(null);
   };
 
+  useEffect(() => {
+    gsap.fromTo(lineRef.current, 
+      { opacity: 0 }, 
+      {
+        opacity: 1,
+        scrollTrigger: {
+          trigger: lineRef.current,
+          start: 'top 80%',
+          end: 'top 20%',
+          scrub: true,
+        },
+      });
+  }, []);
+
   return (
     <>
       <span id="blog"></span>
@@ -44,42 +61,59 @@ const Blog = () => {
             <h1 className="text-3xl sm:text-4xl font-bold">Skills</h1>
           </div>
           <section>
-            <div className="relative">
-              <div className="lg:center-line sm:opacity-0"></div>
-              <div id='Cards' className="flex flex-col items-center gap-4 md:gap-6">
-                {skills.map((skill) => (
-                  <article
+            <div className="relative flex flex-col items-center">
+              {/* Center Line for Large and Medium Devices */}
+              <div
+                ref={lineRef}
+                className="absolute inset-y-0 left-1/2 w-[6px] bg-secondary z-10 hidden sm:block"
+              ></div>
+              {/* Center Line for Small Devices */}
+              <div
+                className="block sm:hidden absolute top-0 left-0 h-full w-[6px] bg-secondary z-10"
+              ></div>
+              {/* Cards */}
+              <div id="Cards" className="relative flex flex-col items-center gap-8">
+                {skills.map((skill, index) => (
+                  <div
                     key={skill.id}
-                    className="skill-card transform transition-transform duration-500 hover:scale-105 relative text-white bg-gradient-to-b from-secondary to-darkBrand rounded-xl shadow-md p-4 flex flex-col items-center justify-center"
-                    onMouseEnter={() => handleSkillHover(skill.id)}
-                    onMouseLeave={handleSkillLeave}
-                    data-aos="fade-up"
-                    data-aos-delay={skill.id * 100} // Adds delay to each skill card
+                    className={`relative flex flex-col items-center w-full mb-10 ${skill.id % 2 === 0 ? 'pl-4' : 'pr-4'} mx-auto`}
+                    data-aos={skill.id % 2 === 0 ? 'fade-left' : 'fade-right'}
+                    data-aos-delay={index * 100} // Adds delay to each skill card
                     data-aos-offset="100" // Starts animation when scrolled into view
-                    style={{ maxWidth: '250px', minWidth: '200px' }}
                   >
-                    <div className="mb-3 mx-auto text-4xl text-primary">
-                      {skill.icon}
-                    </div>
-                    <h1 className="font-bold text-lg text-center mb-2">{skill.name}</h1>
-                    <p className="text-sm text-center mb-3">{skill.description}</p>
-                    <div className="relative w-full">
-                      <div className="flex items-center justify-between mb-2">
-                        <div className="text-right">
-                          <span className="text-xs font-medium">
-                            {hoveredSkill === skill.id ? `${skill.level}%` : ''}
-                          </span>
+                    {/* Additional Information */}
+                    <div 
+                      onMouseEnter={() => handleSkillHover(skill.id)}
+                      onMouseLeave={handleSkillLeave}
+                      className={`relative flex flex-col items-center justify-center ${skill.id % 2 === 0 ? 'sm:ml-4' : 'sm:mr-4'} p-6 bg-white text-black rounded-lg shadow-lg z-20 w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl transition-transform transform hover:scale-105`}
+                      data-aos={skill.id % 2 === 0 ? 'fade-left' : 'fade-right'}
+                      data-aos-delay={index * 100} // Adds delay to each skill card
+                      data-aos-offset="100" // Starts animation when scrolled into view
+                    >
+                      <div className="mb-4 text-4xl sm:text-3xl xs:text-2xl">
+                        {skill.icon}
+                      </div>
+                      <h1 className="font-bold text-xl sm:text-lg xs:text-md text-center mb-3">{skill.name}</h1>
+                      <p className="text-base text-center mb-4 text-gray-600">{skill.description}</p>
+                      <div className="relative w-full flex flex-col items-center">
+                        {/* Display Skill Level */}
+                        <div className="absolute top-2 left-1/2 transform -translate-x-1/2 text-lg sm:text-base font-bold text-primary">
+                          {hoveredSkill === skill.id ? `${skill.level}%` : ''}
+                        </div>
+                        <div className="relative w-full h-2 bg-gray-300 rounded-full overflow-hidden mt-4 mb-2">
+                          <div
+                            style={{ width: `${hoveredSkill === skill.id ? skill.level : 0}%` }}
+                            className={`h-full bg-gradient-to-r from-primary to-primary transition-all duration-1000 ease-out`}
+                          ></div>
                         </div>
                       </div>
-                      <div className="overflow-hidden h-2 mb-4 text-xs flex rounded bg-gray-200">
-                        <div
-                          style={{ width: `${hoveredSkill === skill.id ? skill.level : 0}%` }}
-                          className={`h-full bg-gradient-to-r from-secondary to-primary transition-width duration-1000 ease-out 
-                            ${hoveredSkill === skill.id ? 'opacity-100' : 'opacity-0'}`}
-                        ></div>
-                      </div>
                     </div>
-                  </article>
+                    {/* Dot at Intersection */}
+                    <div
+                      className={`absolute w-3 h-3 rounded-full bg-white ${skill.id % 2 === 0 ? 'left-[calc(50%-1.5rem)]' : 'right-[calc(50%-1.5rem)]'} ${hoveredSkill === skill.id ? 'opacity-100' : 'opacity-100'} transition-opacity duration-500`}
+                      style={{ top: '50%' }}
+                    ></div>
+                  </div>
                 ))}
               </div>
             </div>
