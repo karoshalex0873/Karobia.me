@@ -28,17 +28,9 @@ const Blog = () => {
       duration: 1000,
       easing: 'ease-in-out',
     });
-  }, []);
 
-  const handleSkillHover = (id) => {
-    setHoveredSkill(id);
-  };
+    gsap.registerPlugin(ScrollTrigger);
 
-  const handleSkillLeave = () => {
-    setHoveredSkill(null);
-  };
-
-  useEffect(() => {
     gsap.fromTo(lineRef.current, 
       { opacity: 0 }, 
       {
@@ -52,11 +44,19 @@ const Blog = () => {
       });
   }, []);
 
+  const handleSkillHover = (id) => {
+    setHoveredSkill(id);
+  };
+
+  const handleSkillLeave = () => {
+    setHoveredSkill(null);
+  };
+
   return (
     <>
       <span id="blog"></span>
       <div className="py-10">
-        <div className="container mx-auto relative px-4">
+        <div className="container mx-auto px-4">
           <div className="text-center mb-10">
             <h1 className="text-3xl sm:text-4xl font-bold">Skills</h1>
           </div>
@@ -69,26 +69,22 @@ const Blog = () => {
               ></div>
               {/* Center Line for Small Devices */}
               <div
-                className="block md:hidden absolute top-0 left-0 h-full w-[6px] bg-secondary z-10"
+                className="block md:hidden absolute top-0 left-1/2 h-full w-[6px] bg-secondary z-10"
               ></div>
               {/* Cards */}
-              <div id="Cards" className="relative flex flex-col items-center gap-8 mx-auto">
+              <div id="Cards" className="relative flex flex-col items-center gap-8">
                 {skills.map((skill, index) => (
                   <div
                     key={skill.id}
                     className={`relative flex flex-col items-center w-full mb-10 ${skill.id % 2 === 0 ? 'md:pl-8' : 'md:pr-8'} mx-auto`}
                     data-aos={skill.id % 2 === 0 ? 'fade-left' : 'fade-right'}
-                    data-aos-delay={index * 100} // Adds delay to each skill card
-                    data-aos-offset="100" // Starts animation when scrolled into view
+                    data-aos-delay={index * 100}
+                    data-aos-offset="100"
                   >
-                    {/* Additional Information */}
                     <div 
                       onMouseEnter={() => handleSkillHover(skill.id)}
                       onMouseLeave={handleSkillLeave}
                       className={`relative flex flex-col items-center justify-center ${skill.id % 2 === 0 ? 'md:ml-8' : 'md:mr-8'} p-6 bg-white text-black rounded-lg shadow-lg z-20 w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl transition-transform transform hover:scale-105`}
-                      data-aos={skill.id % 2 === 0 ? 'fade-left' : 'fade-right'}
-                      data-aos-delay={index * 100} // Adds delay to each skill card
-                      data-aos-offset="100" // Starts animation when scrolled into view
                     >
                       <div className="mb-4 text-4xl sm:text-3xl xs:text-2xl">
                         {skill.icon}
@@ -108,9 +104,8 @@ const Blog = () => {
                         </div>
                       </div>
                     </div>
-                    {/* Dot at Intersection */}
                     <div
-                      className={`absolute w-3 h-3 rounded-full bg-white ${skill.id % 2 === 0 ? 'left-[calc(50%-1.5rem)]' : 'right-[calc(50%-1.5rem)]'} ${hoveredSkill === skill.id ? 'opacity-100' : 'opacity-100'} transition-opacity duration-500`}
+                      className={`absolute w-3 h-3 rounded-full bg-white ${skill.id % 2 === 0 ? 'left-[calc(50%-1.5rem)]' : 'right-[calc(50%-1.5rem)]'} transition-opacity duration-500`}
                       style={{ top: '50%' }}
                     ></div>
                   </div>
