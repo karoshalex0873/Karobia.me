@@ -10,7 +10,7 @@ const App = () => {
   return (
     <div>
       <Main />
-      <About />
+      {/* <About /> */}
       <Projects />
       <div className="container mx-auto px-4 md:px-6 py-10">
         <div className="flex flex-wrap justify-center md:justify-between">
