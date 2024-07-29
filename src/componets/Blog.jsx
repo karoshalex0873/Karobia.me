@@ -76,7 +76,7 @@ const Blog = () => {
                 {skills.map((skill, index) => (
                   <div
                     key={skill.id}
-                    className={`relative flex flex-col items-center w-full mb-10 ${skill.id % 2 === 0 ? 'pl-4' : 'pr-4'} ${skill.id % 2 === 0 ? 'sm:ml-4' : 'sm:mr-4'} ${skill.id % 2 === 0 ? 'md:pl-0 md:pr-0' : 'md:pl-0 md:pr-0'} mx-auto`}
+                    className={`relative flex flex-col items-center w-full mb-10 ${skill.id % 2 === 0 ? 'pl-2' : 'pr-2'} ${skill.id % 2 === 0 ? 'sm:ml-2' : 'sm:mr-2'} ${skill.id % 2 === 0 ? 'md:pl-0 md:pr-0' : 'md:pl-0 md:pr-0'} mx-auto`}
                     data-aos={skill.id % 2 === 0 ? 'fade-left' : 'fade-right'}
                     data-aos-delay={index * 100} // Adds delay to each skill card
                     data-aos-offset="100" // Starts animation when scrolled into view
@@ -85,7 +85,7 @@ const Blog = () => {
                     <div 
                       onMouseEnter={() => handleSkillHover(skill.id)}
                       onMouseLeave={handleSkillLeave}
-                      className={`relative flex w-full flex-col items-center justify-center ${skill.id % 2 === 0 ? 'sm:ml-72' : 'sm:mr-72'} p-2 bg-white text-secondary rounded-lg shadow-md z-20 max-w-44`}
+                      className={`relative flex w-full flex-col items-center justify-center ${skill.id % 2 === 0 ? 'sm:ml-72' : 'sm:mr-72'} p-2 bg-white text-secondary rounded-lg shadow-md z-20 sm:max-w-36 max-w-md`}
                       data-aos-delay={index * 100} // Adds delay to each skill card
                       data-aos-offset="100" // Starts animation when scrolled into view
                     >
