@@ -10,7 +10,10 @@ const App = () => {
   return (
     <div>
       <Main />
+      <div className="px-2 mx-auto container">
       <About />
+      </div>
+
       <Projects />
       <div className="container mx-auto px-4 md:px-6 py-10">
         <div className="flex flex-wrap justify-center md:justify-between">

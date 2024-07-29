@@ -45,7 +45,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="bg-gradient-to-r from-primary to-secondary/90 text-white  ">
+    <div className="bg-gradient-to-r from-primary to-secondary/90 text-white  p-0 ">
       <div className="container py-1">
         <div className="flex justify-between items-center">
           {/* Logo section */}
@@ -63,7 +63,7 @@ const Navbar = () => {
           </div>
 
           {/* Menu items */}
-          <ul className={`sm:flex items-center sm:justify-normal gap-4 lg:relative md:relative absolute right-0 top-0 z-50 p-4 rounded-lg ${showMenu ? 'block' : 'hidden'} sm:block  mt-3`}>
+          <ul className={`sm:flex items-center  text-secondary sm:justify-normal gap-4 lg:relative md:relative absolute right-0 top-0 z-50 p-0 rounded-lg ${showMenu ? 'block' : 'hidden'} sm:block  mt-1`}>
             {Menu.map((data) => (
               <li key={data.id}>
                 <button
