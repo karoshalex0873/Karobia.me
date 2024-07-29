@@ -85,7 +85,7 @@ const Blog = () => {
                     <div 
                       onMouseEnter={() => handleSkillHover(skill.id)}
                       onMouseLeave={handleSkillLeave}
-                      className={`relative flex w-full flex-col items-center justify-center ${skill.id % 2 === 0 ? 'sm:ml-72' : 'sm:mr-72'} p-2 bg-white text-secondary rounded-lg shadow-md z-20 sm:max-w-36 max-w-md`}
+                      className={`relative flex w-full flex-col items-center justify-center ${skill.id % 2 === 0 ? 'sm:ml-72' : 'sm:mr-72'} p-2 bg-white text-secondary rounded-lg shadow-md z-20 max-w-36 lg:max-w-md`}
                       data-aos-delay={index * 100} // Adds delay to each skill card
                       data-aos-offset="100" // Starts animation when scrolled into view
                     >
