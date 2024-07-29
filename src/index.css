@@ -1,6 +1,37 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* Add this to your global CSS or in a CSS module */
+@keyframes liquid {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.liquid-effect {
+  position: relative;
+  animation: liquid 2s infinite ease-in-out;
+}
+
+.liquid-effect::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  z-index: -1;
+  animation: liquid 4s infinite ease-in-out;
+}
+
 
 @layer utilities {
   .menu-icon {

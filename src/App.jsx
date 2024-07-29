@@ -9,7 +9,6 @@ import SocialMediaLinks from "./componets/SocialMediaLinks"
 const App = () => {
   return (
     <div>
-      <Navbar />
       <Main />
       <About />
       <Projects />

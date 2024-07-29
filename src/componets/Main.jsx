@@ -1,36 +1,89 @@
-// import React from 'react';
-import { Link } from 'react-scroll';
-import alex from '../assets/alex.jpg';
+import React, { useEffect } from "react";
+import { Link } from "react-scroll";
+import alex from "../assets/alex.jpg";
+import AOS from "aos";
+import "aos/dist/aos.css"; // Import AOS CSS
+import { FaFacebookF, FaLinkedinIn, FaInstagram } from "react-icons/fa";
+import Navbar from "./Navbar"; // Import the Navbar component
 
 const Main = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1000 }); // Customize AOS duration
+  }, []);
+
   return (
-    <div className="min-h-[550px] sm:min-h-[600px] bg-darkBrand flex justify-center items-center text-white">
-      <div className="container pb-8 sm:pb-0">
-        <div className="grid grid-cols-1 sm:grid-cols-2">
+    <div className="min-h-screen bg-darkBrand flex flex-col justify-center items-center text-white relative overflow-hidden">
+      {/* Include the Navbar at the top */}
+      <div className="w-full fixed top-0 left-0 z-50">
+        <Navbar />
+      </div>
+
+      {/* Icons on the right with animation */}
+      <div className="fixed right-0 top-0 w-[80px] h-full bg-gradient-to-b from-primary to-secondary flex flex-col justify-center items-center gap-4 p-2 z-20 transition-transform duration-300 ease-in-out transform hover:translate-x-0 animate-fade-in">
+        <a
+          href="https://facebook.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block p-2 rounded-full cursor-pointer border border-white hover:bg-white hover:text-primary transition-colors duration-300"
+        >
+          <FaFacebookF className="text-2xl text-white" />
+        </a>
+        <a
+          href="https://instagram.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block p-2 rounded-full cursor-pointer border border-white hover:bg-white hover:text-primary transition-colors duration-300"
+        >
+          <FaInstagram className="text-2xl text-white" />
+        </a>
+        <a
+          href="https://linkedin.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block p-2 rounded-full cursor-pointer border border-white hover:bg-white hover:text-primary transition-colors duration-300"
+        >
+          <FaLinkedinIn className="text-2xl text-white" />
+        </a>
+      </div>
+
+      <div className="container px-6 py-12 mx-auto relative mt-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
           {/* Text content section */}
-          <div className="order-2 sm:order-2 px-20">
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold py-10">
+          <div className="text-center md:text-left">
+            <h1
+              data-aos="fade-right"
+              className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-4"
+            >
               I am, Karobia Alex <span className="text-secondary">Software Developer</span>
             </h1>
-            <div>
-                <button>
-                <Link
-                    to="reach_out"
-                    smooth={true}
-                    duration={500}
-                    className="bg-gradient-to-r from-secondary to-primary border-2 border-secondary rounded-full px-4 py-2 text-white hover:scale-105 duration-200 cursor-pointer"
-                  >
-                    Download CV
-                  </Link>
-                </button>
+            <p
+              data-aos="fade-up"
+              data-aos-delay="300"
+              className="text-lg sm:text-xl mb-6"
+            >
+              I specialize in creating stunning and functional digital experiences. <br />Let's connect and build something great together.
+            </p>
+            <div
+              data-aos="fade-up"
+              data-aos-delay="600"
+              className="flex justify-center md:justify-start"
+            >
+              <a
+                href="/CV_Karobia_Alex.pdf" // Adjust the path as needed
+                download="CV_Karobia_Alex.pdf" // The file name for the download
+                className="bg-gradient-to-r from-secondary to-primary border-2 border-secondary rounded-full px-6 py-3 font-semibold text-white hover:scale-105 transition duration-200"
+              >
+                Download CV
+              </a>
             </div>
           </div>
           {/* Image content section */}
-          <div className="min-h-[450px] flex justify-center items-center order-1 sm:order-2 relative">
+          <div className="flex justify-center items-center relative">
             <img
               src={alex}
-              alt="karobia"
-              className="lg:w-[280px] w-[200px] lg:h-[420px] md:h-[300px] sm:w-[200px] sm:h-[300px] rounded-3xl hover:scale-110 hover:rotate-0 rotate-3"
+              alt="Karobia Alex"
+              data-aos="zoom-in"
+              className="w-80 h-auto rounded-3xl shadow-lg transform transition-transform duration-500 hover:scale-105 liquid-effect"
             />
           </div>
         </div>

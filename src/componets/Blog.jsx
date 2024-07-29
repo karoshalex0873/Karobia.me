@@ -1,6 +1,8 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaPython } from 'react-icons/fa';
 import { SiTailwindcss, SiNextdotjs, SiThreedotjs, SiMongodb, SiExpress } from 'react-icons/si';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const skills = [
   { id: 1, name: 'HTML', description: 'HyperText Markup Language used for structuring web content.', level: 90, icon: <FaHtml5 className="text-orange-500" /> },
@@ -18,6 +20,13 @@ const skills = [
 const Blog = () => {
   const [hoveredSkill, setHoveredSkill] = useState(null);
 
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      easing: 'ease-in-out',
+    });
+  }, []);
+
   const handleSkillHover = (id) => {
     setHoveredSkill(id);
   };
@@ -30,29 +39,31 @@ const Blog = () => {
     <>
       <span id="blog"></span>
       <div className="py-10">
-        <div className="container mx-auto relative">
-          <div className="text-center mb-0">
-            <h1 className="Main-heading">Skills</h1>
+        <div className="container mx-auto relative px-4">
+          <div className="text-center mb-10">
+            <h1 className="text-3xl sm:text-4xl font-bold">Skills</h1>
           </div>
           <section>
-            <div className="text-center mb-0 py-8"></div>
             <div className="relative">
               <div className="lg:center-line sm:opacity-0"></div>
-              <div id='Cards' className="flex flex-wrap justify-center gap-4 md:gap-6">
+              <div id='Cards' className="flex flex-col items-center gap-4 md:gap-6">
                 {skills.map((skill) => (
                   <article
                     key={skill.id}
-                    className="transform transition duration-500 hover:scale-105 relative text-white bg-gradient-to-b from-secondary to-darkBrand rounded-xl shadow-md p-3 flex flex-col items-center justify-center"
+                    className="skill-card transform transition-transform duration-500 hover:scale-105 relative text-white bg-gradient-to-b from-secondary to-darkBrand rounded-xl shadow-md p-4 flex flex-col items-center justify-center"
                     onMouseEnter={() => handleSkillHover(skill.id)}
                     onMouseLeave={handleSkillLeave}
+                    data-aos="fade-up"
+                    data-aos-delay={skill.id * 100} // Adds delay to each skill card
+                    data-aos-offset="100" // Starts animation when scrolled into view
                     style={{ maxWidth: '250px', minWidth: '200px' }}
                   >
-                    <div className="mb-3 mx-auto text-3xl text-primary">
+                    <div className="mb-3 mx-auto text-4xl text-primary">
                       {skill.icon}
                     </div>
                     <h1 className="font-bold text-lg text-center mb-2">{skill.name}</h1>
-                    <p className="text-sm text-start mb-3">{skill.description}</p>
-                    <div className="relative w-16">
+                    <p className="text-sm text-center mb-3">{skill.description}</p>
+                    <div className="relative w-full">
                       <div className="flex items-center justify-between mb-2">
                         <div className="text-right">
                           <span className="text-xs font-medium">
