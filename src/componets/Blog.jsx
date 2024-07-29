@@ -72,7 +72,7 @@ const Blog = () => {
                 className="block md:hidden absolute top-0 left-0 h-full w-[6px] bg-secondary z-10"
               ></div>
               {/* Cards */}
-              <div id="Cards" className="relative flex flex-col items-center gap-8">
+              <div id="Cards" className="relative flex flex-col items-center gap-8 mx-auto">
                 {skills.map((skill, index) => (
                   <div
                     key={skill.id}
