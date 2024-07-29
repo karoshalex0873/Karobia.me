@@ -64,7 +64,7 @@ const Main = () => {
               data-aos-delay="300"
               className="text-lg sm:text-xl mb-6"
             >
-              I specialize in creating stunning and functional digital Web apps. <br />Let's connect and build something great together.
+              I specialize in creating stunning and functional digital Web. <br />Let's connect and build something great together.
             </p>
             <div
               data-aos="fade-up"
@@ -86,7 +86,7 @@ const Main = () => {
               src={alex}
               alt="Karobia Alex"
               data-aos="zoom-in"
-              className="w-80 h-auto rounded-3xl shadow-lg transform transition-transform duration-500 hover:scale-105 liquid-effect"
+              className="w-50 lg:w-80 h-auto rounded-3xl shadow-lg transform transition-transform duration-500 hover:scale-105 liquid-effect"
             />
           </div>
         </div>
