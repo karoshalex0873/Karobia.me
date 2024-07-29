@@ -19,7 +19,7 @@ const Main = () => {
       </div>
 
       {/* Icons on the right with animation */}
-      <div className="fixed right-0 top-0 w-[80px] h-full bg-gradient-to-b from-primary to-secondary flex flex-col justify-center items-center gap-4 p-2 z-20 transition-transform duration-300 ease-in-out transform hover:translate-x-0 animate-fade-in">
+      <div className="fixed right-0 top-0 w-[40px] lg:w-[80] h-full bg-gradient-to-b from-primary to-secondary flex flex-col justify-center items-center gap-4 p-2 z-20 transition-transform duration-300 ease-in-out transform hover:translate-x-0 animate-fade-in">
         <a
           href="https://facebook.com"
           target="_blank"
