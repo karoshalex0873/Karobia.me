@@ -65,18 +65,18 @@ const Blog = () => {
               {/* Center Line for Large and Medium Devices */}
               <div
                 ref={lineRef}
-                className="absolute inset-y-0 left-1/2 w-[6px] bg-secondary z-10 hidden sm:block"
+                className="absolute inset-y-0 left-1/2 w-[6px] bg-secondary z-10 hidden md:block"
               ></div>
               {/* Center Line for Small Devices */}
               <div
-                className="block sm:hidden absolute top-0 left-0 h-full w-[6px] bg-secondary z-10"
+                className="block md:hidden absolute top-0 left-0 h-full w-[6px] bg-secondary z-10"
               ></div>
               {/* Cards */}
               <div id="Cards" className="relative flex flex-col items-center gap-8">
                 {skills.map((skill, index) => (
                   <div
                     key={skill.id}
-                    className={`relative flex flex-col items-center w-full mb-10 ${skill.id % 2 === 0 ? 'pl-4' : 'pr-4'} mx-auto`}
+                    className={`relative flex flex-col items-center w-full mb-10 ${skill.id % 2 === 0 ? 'md:pl-8' : 'md:pr-8'} mx-auto`}
                     data-aos={skill.id % 2 === 0 ? 'fade-left' : 'fade-right'}
                     data-aos-delay={index * 100} // Adds delay to each skill card
                     data-aos-offset="100" // Starts animation when scrolled into view
@@ -85,7 +85,7 @@ const Blog = () => {
                     <div 
                       onMouseEnter={() => handleSkillHover(skill.id)}
                       onMouseLeave={handleSkillLeave}
-                      className={`relative flex flex-col items-center justify-center ${skill.id % 2 === 0 ? 'sm:ml-4' : 'sm:mr-4'} p-6 bg-white text-black rounded-lg shadow-lg z-20 w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl transition-transform transform hover:scale-105`}
+                      className={`relative flex flex-col items-center justify-center ${skill.id % 2 === 0 ? 'md:ml-8' : 'md:mr-8'} p-6 bg-white text-black rounded-lg shadow-lg z-20 w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl transition-transform transform hover:scale-105`}
                       data-aos={skill.id % 2 === 0 ? 'fade-left' : 'fade-right'}
                       data-aos-delay={index * 100} // Adds delay to each skill card
                       data-aos-offset="100" // Starts animation when scrolled into view
