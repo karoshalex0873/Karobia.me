@@ -26,7 +26,7 @@ const Main = () => {
           rel="noopener noreferrer"
           className="inline-block p-2 rounded-full cursor-pointer border border-white hover:bg-white hover:text-primary transition-colors duration-300"
         >
-          <FaFacebookF className="text-2xl text-white" />
+          <FaFacebookF className="text-2xl text-white w-[20] h-auto" />
         </a>
         <a
           href="https://instagram.com"
