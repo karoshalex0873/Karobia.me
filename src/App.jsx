@@ -1,4 +1,3 @@
-import Navbar from "./componets/Navbar"
 import Main from "./componets/Main"
 import About from "./componets/About"
 import Projects from "./componets/Projects"

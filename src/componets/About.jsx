@@ -55,7 +55,7 @@ const About = () => {
             <h1 className="text-4xl font-bold text-gray-800">About Me</h1>
           </div>
           {/* About Me */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 sm:gap-8 md:gap-5 place-items-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 min-w-full">
             {AboutData.map((data, index) => (
               <div
                 data-aos="fade-up"
