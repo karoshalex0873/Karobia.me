@@ -8,7 +8,7 @@ import SocialMediaLinks from "./componets/SocialMediaLinks"
 
 const App = () => {
   return (
-    <div>
+    <div className=" mx-auto w-full px-2">
       <Main />
       <div className="px-0 mx-auto max-w-md">
       <About />
