@@ -9,7 +9,7 @@ const App = () => {
   return (
     <div className=" mx-auto w-full px-0">
       <Main />
-      <div className="px-0 mx-auto max-w-md">
+      <div className="px-0 mx-auto ">
       <About />
       </div>
 

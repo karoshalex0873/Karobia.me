@@ -55,16 +55,16 @@ const About = () => {
             <h1 className="text-4xl font-bold text-gray-800">About Me</h1>
           </div>
           {/* About Me */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 min-w-full">
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 lg:gap-12">
             {AboutData.map((data, index) => (
               <div
                 data-aos="fade-up"
                 data-aos-delay={data.aosDelay}
                 key={index}
-                className="rounded-2xl bg-white hover:bg-secondary hover:text-white shadow-xl duration-200 max-w-[400px] sm:max-w-[500px] group relative"
+                className="rounded-2xl bg-white hover:bg-secondary hover:text-white shadow-xl duration-200 group relative"
               >
                 <div className="p-6 text-center">
-                  <h1 className="text-xl font-bold">{data.category}</h1>
+                  <h1 className="text-xl font-bold mb-2">{data.category}</h1>
                   <p className="text-gray-500 group-hover:text-white duration-300 text-sm">{data.description}</p>
                 </div>
               </div>
