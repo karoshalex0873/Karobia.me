@@ -9,7 +9,7 @@ const App = () => {
   return (
     <div className=" mx-auto w-full px-0">
       <Main />
-      <div className="px-0 mx-auto ">
+      <div className="px-0 mx-auto">
       <About />
       </div>
 
@@ -20,7 +20,7 @@ const App = () => {
             <ContactForm />
           </div>
           <div className="w-full md:w-2/5 md:pl-6">
-            <SocialMediaLinks />
+            {/* <SocialMediaLinks /> */}
           </div>
         </div>
       </div>
