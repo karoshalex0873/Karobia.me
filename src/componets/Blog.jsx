@@ -76,7 +76,7 @@ const Blog = () => {
                 {skills.map((skill, index) => (
                   <div
                     key={skill.id}
-                    className={`relative flex flex-col items-center w-full mb-10 ${skill.id % 2 === 0 ? 'pl-2' : 'pr-2'} ${skill.id % 2 === 0 ? 'sm:ml-2' : 'sm:mr-2'} ${skill.id % 2 === 0 ? 'md:pl-0 md:pr-0' : 'md:pl-0 md:pr-0'} mx-auto`}
+                    className={`relative flex flex-col items-center w-full mb-10 ${skill.id % 2 === 0 ? 'pl-2' : 'pr-2'} ${skill.id % 2 === 0 ? 'sm:ml-2' : 'sm:mr-2'} ${skill.id % 2 === 0 ? 'md:pl-0 md:pr-0' : 'md:pl-0 md:pr-0'} `}
                     data-aos={skill.id % 2 === 0 ? 'fade-left' : 'fade-right'}
                     data-aos-delay={index * 100} // Adds delay to each skill card
                     data-aos-offset="100" // Starts animation when scrolled into view
@@ -85,7 +85,7 @@ const Blog = () => {
                     <div 
                       onMouseEnter={() => handleSkillHover(skill.id)}
                       onMouseLeave={handleSkillLeave}
-                      className={`relative flex w-full flex-col items-center justify-center ${skill.id % 2 === 0 ? 'sm:ml-72' : 'sm:mr-72'} p-2 bg-white text-secondary rounded-lg shadow-md z-20 max-w-36 lg:max-w-48`}
+                      className={`relative flex w-full flex-col items-center justify-center ${skill.id % 2 === 0 ? 'sm:ml-24' : 'sm:mr-24'} p-2 bg-gray-50 hover:bg-secondary hover:text-white text-secondary rounded-lg shadow-md z-20 max-w-44 lg:max-w-48`}
                       data-aos-delay={index * 100} // Adds delay to each skill card
                       data-aos-offset="100" // Starts animation when scrolled into view
                     >
@@ -93,7 +93,7 @@ const Blog = () => {
                         {skill.icon}
                       </div>
                       <h1 className="font-bold text-lg sm:text-base xs:text-sm text-center mb-2">{skill.name}</h1>
-                      <p className="text-sm text-start mb-3 text-secondary">{skill.description}</p>
+                      <p className="text-sm text-start mb-3">{skill.description}</p>
                       <div className="relative w-full flex flex-col items-center">
                         {/* Display Skill Level */}
                         <div className="absolute top-0 left-1/2 transform -translate-x-1/2 text-xl sm:text-lg xs:text-base font-bold text-primary">
@@ -102,7 +102,7 @@ const Blog = () => {
                         <div className="relative w-full h-2 bg-gray-300 rounded-full overflow-hidden mt-6 mb-4">
                           <div
                             style={{ width: `${hoveredSkill === skill.id ? skill.level : 0}%` }}
-                            className={`h-full bg-gradient-to-r from-primary to-primary transition-all duration-1000 ease-out`}
+                            className={`h-full bg-gradient-to-r from-primary to-secondary transition-all duration-1000 ease-out`}
                           ></div>
                         </div>
                       </div>

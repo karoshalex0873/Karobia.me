@@ -48,7 +48,7 @@ const About = () => {
   return (
     <>
       <span id="About"></span>
-      <div className="py-10 flex flex-col bg-gray-50">
+      <div className="py-10 flex flex-col bg-gray-200">
         <div className="container mx-auto px-4">
           {/* Header title */}
           <div className="text-center mb-10">
