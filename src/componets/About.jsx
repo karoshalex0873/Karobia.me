@@ -48,7 +48,7 @@ const About = () => {
            </h1>
            </div>
            {/*Abou me   */}
-           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 sm:gap-8 md:gap-5 place-items-center">
+           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 sm:gap-8 md:gap-5 place-items-center ">
            {
              AboutData.map((data, index) => {
                return (
@@ -56,7 +56,7 @@ const About = () => {
                    data-aos="fade-up"
                    data-aos-delay={data.aosDelay}
                    key={index}
-                   className="rounded-2xl bg-white hover:bg-secondary hover:text-white shadow-xl duration-200 max-w-[400px] sm:max-w-[500px] group relative"
+                   className="rounded-2xl bg-white hover:bg-secondary hover:text-white shadow-xl duration-200 max-w-[400px] sm:max-w-[500px] group relative  px-2"
                  >
                    <div className="p-4 text-center">
                      <h1 className="text-xl font-bold">{data.category}</h1>

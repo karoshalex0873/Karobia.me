@@ -86,7 +86,7 @@ const Main = () => {
               src={alex}
               alt="Karobia Alex"
               data-aos="zoom-in"
-              className="w-52 lg:w-80 h-auto rounded-3xl shadow-lg transform transition-transform duration-500 hover:scale-105 liquid-effect"
+              className="w-52 lg:w-80 h-auto rounded-3xl shadow-lg transform transition-transform duration-500 hover:scale-105 liquid-effect -z-20 "
             />
           </div>
         </div>
