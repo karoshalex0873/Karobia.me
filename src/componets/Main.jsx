@@ -52,7 +52,7 @@ const Main = () => {
       <div className="container lg:px-6 px-10 py-12 mx-auto relative mt-20">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
           {/* Text content section */}
-          <div className="text-start lg:text-center md:text-left">
+          <div className="text-start lg:text-center md:text-left container">
             <h1
               data-aos="fade-right"
               className="text-5xl sm:text-6xl lg:text-7xl font-bold "
