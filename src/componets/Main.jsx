@@ -8,7 +8,10 @@ import Navbar from "./Navbar"; // Import the Navbar component
 
 const Main = () => {
   useEffect(() => {
-    AOS.init({ duration: 1000 }); // Customize AOS duration
+    AOS.init({ duration: 1000,
+      easing: 'ease-in-out',
+      once: false,
+    }); // Customize AOS duration
   }, []);
 
   return (
