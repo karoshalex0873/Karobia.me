@@ -10,7 +10,7 @@ const App = () => {
   return (
     <div>
       <Main />
-      <div className="px-2 mx-auto container">
+      <div className="px-0 mx-auto max-w-md">
       <About />
       </div>
 
