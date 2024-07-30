@@ -20,6 +20,9 @@ const App = () => {
           <div className="w-full md:w-2/5 md:pr-6 mb-6 md:mb-0">
             <ContactForm />
           </div>
+          <div className="w-full md:w-2/5 md:pl-6">
+            <SocialMediaLinks />
+          </div>
         </div>
       </div>
       <div className="container mx-auto px-4 md:px-6 py-10">
