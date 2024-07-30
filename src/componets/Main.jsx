@@ -1,98 +1,80 @@
-import React, { useEffect } from "react";
-import { Link } from "react-scroll";
-import alex from "../assets/alex.jpg";
-import AOS from "aos";
-import "aos/dist/aos.css"; // Import AOS CSS
-import { FaFacebookF, FaLinkedinIn, FaInstagram } from "react-icons/fa";
-import Navbar from "./Navbar"; // Import the Navbar component
+import React, { useEffect } from 'react';
+import Blog from "./Blog";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
-const Main = () => {
+const AboutData = [
+  {
+    id: 1,
+    category: "Career Path",
+    description: "Started career path in software engineering in 2023, passionate about solving problems with technology.",
+    aosDelay: "100",
+  },
+  {
+    id: 2,
+    category: "Education",
+    description: "Currently pursuing a degree in Information Technology at Dedan Kimathi University of Technology.",
+    aosDelay: "300",
+  },
+  {
+    id: 3,
+    category: "Projects",
+    description: "Developed several web applications and contributed to open-source projects. More info is in the Project section.",
+    aosDelay: "500",
+  },
+  {
+    id: 4,
+    category: "Achievements",
+    description: "Received awards for academic excellence and innovation in software development.",
+    aosDelay: "700",
+  },
+  {
+    id: 5,
+    category: "Skills",
+    description: "Proficient in JavaScript, Python, React, Node.js, and database management.",
+    aosDelay: "900",
+  },
+];
+
+const About = () => {
   useEffect(() => {
-    AOS.init({ duration: 1000 }); // Customize AOS duration
+    AOS.init({
+      duration: 1000,
+      easing: 'ease-in-out',
+      once: true,
+    });
   }, []);
 
   return (
-    <div className="min-h-screen bg-darkBrand flex flex-col justify-center items-center text-white relative overflow-hidden">
-      {/* Include the Navbar at the top */}
-      <div className="w-full fixed top-0 left-0 z-50">
-        <Navbar />
-      </div>
-
-      {/* Icons on the right with animation */}
-      <div 
-      data-aos="fade-up"
-      data-aos-delay="300"
-      className="fixed right-0 top-0 w-[40px] lg:w-[80] h-full flex flex-col justify-center items-center gap-4 p-2 z-20 transition-transform duration-300 ease-in-out transform hover:translate-x-0 animate-fade-in ">
-        <a
-          href="https://facebook.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block p-2 rounded-full cursor-pointer border border-secondary hover:bg-white hover:text-primary transition-colors duration-300"
-        >
-          <FaFacebookF className="text-xl  text-secondary" />
-        </a>
-        <a
-          href="https://instagram.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block p-2 rounded-full cursor-pointer border border-primary hover:bg-white hover:text-primary transition-colors duration-300"
-        >
-          <FaInstagram className="text-xl text-secondary" />
-        </a>
-        <a
-          href="https://linkedin.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block p-2 rounded-full cursor-pointer border border-secondary hover:bg-white hover:text-primary transition-colors duration-300"
-        >
-          <FaLinkedinIn className="text-xl text-secondary" />
-        </a>
-      </div>
-
-      <div className="container lg:px-6 px-10 py-12 mx-auto relative mt-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
-          {/* Text content section */}
-          <div className="text-start lg:text-center md:text-left">
-            <h1
-              data-aos="fade-right"
-              className="text-5xl sm:text-6xl lg:text-7xl font-bold "
-            >
-              I am, Karobia Alex <span className="text-secondary">Software Developer</span>
-            </h1>
-            <p
-              data-aos="fade-up"
-              data-aos-delay="300"
-              className="text-lg sm:text-xl mb-6"
-            >
-              I specialize in creating stunning and functional digital Web. <br />Let's connect and build something great together.
-            </p>
-            <div
-              data-aos="fade-up"
-              data-aos-delay="600"
-              className="flex justify-center md:justify-start"
-            >
-              <a
-                href="/CV_Karobia_Alex.pdf" // Adjust the path as needed
-                download="CV_Karobia_Alex.pdf" // The file name for the download
-                className="bg-gradient-to-r from-secondary to-primary border-2 border-secondary rounded-full px-6 py-3 font-semibold text-white hover:scale-105 transition duration-200"
-              >
-                Download CV
-              </a>
-            </div>
+    <>
+      <span id="About"></span>
+      <div className="py-10 flex flex-col bg-gray-50">
+        <div className="container mx-auto px-4">
+          {/* Header title */}
+          <div className="text-center mb-10">
+            <h1 className="text-4xl font-bold text-gray-800">About Me</h1>
           </div>
-          {/* Image content section */}
-          <div className="flex justify-center items-center relative">
-            <img
-              src={alex}
-              alt="Karobia Alex"
-              data-aos="zoom-in"
-              className="w-52 lg:w-80 h-auto rounded-3xl shadow-lg transform transition-transform duration-500 hover:scale-105 liquid-effect -z-20 "
-            />
+          {/* About Me */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 min-w-full">
+            {AboutData.map((data, index) => (
+              <div
+                data-aos="fade-up"
+                data-aos-delay={data.aosDelay}
+                key={index}
+                className="rounded-2xl bg-white hover:bg-secondary hover:text-white shadow-xl duration-200 w-full max-w-none group relative"
+              >
+                <div className="p-6 text-center">
+                  <h1 className="text-xl font-bold">{data.category}</h1>
+                  <p className="text-gray-500 group-hover:text-white duration-300 text-sm">{data.description}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
+        <Blog />
       </div>
-    </div>
+    </>
   );
 };
 
-export default Main;
+export default About;
