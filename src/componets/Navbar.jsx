@@ -68,7 +68,7 @@ const Navbar = () => {
               <li key={data.id}>
                 <button
                   onClick={() => scrollToSection(data.link)}
-                  className=" menu-icon block py-2 px-4 text-primary text-left w-full "
+                  className=" menu-icon block py-2 px-4  text-left w-full "
                 >
                   {data.name}
                 </button>
