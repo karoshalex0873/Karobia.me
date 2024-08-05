@@ -1,4 +1,5 @@
 import Supercar from '../assets/Super Cars.png'
+import QueenSalon from '../assets/Queen Salon.png'
 const projectData=[
     {
      id:1,
@@ -6,7 +7,15 @@ const projectData=[
      name:"Super Car Market",
      link:"https://super-car-seven.vercel.app/",
      description:"A react  and three js peroject that advertise the sale of super cars"
-    }
+    },
+    {
+      id:2,
+      img:QueenSalon,
+      name:"Queen Salon",
+      link:"https://queens-salon.vercel.app/",
+      description:"A react and tailwind using routes  to vavigate to other sections"
+     }
+
 ];
 const Projects = () => {
   return (
