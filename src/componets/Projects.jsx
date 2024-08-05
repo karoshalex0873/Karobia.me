@@ -1,5 +1,6 @@
 import Supercar from '../assets/Super Cars.png'
-import QueenSalon from '../assets/Queen Salon.png'
+import QueenSalon from '../assets/Queen.png'
+import { FaArrowAltCircleRight, FaArrowRight } from 'react-icons/fa';
 const projectData=[
     {
      id:1,
@@ -21,10 +22,10 @@ const Projects = () => {
   return (
     <>
     <span id="projects"></span>
-    <div className=" py-10">
+    <div className=" py-10 bg-gray-400/50">
         <div className="continer">
             <div className=" text-center mb-0">
-            <h1 className="text-4xl font-bold text-gray-800">Projects
+            <h1 className="text-4xl font-bold text-secondary">Projects
            </h1>
            </div>
              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-15 md:gap-5 place-items-center  space-x-8 p-10
@@ -33,22 +34,22 @@ const Projects = () => {
                 projectData.map((data, index)=>{
                     return(
                         <div key={index}
-                        className=" rounded-2xl bg-gradient-to-tr from-darkBrand to-secondary hover:text-white shadow-xl duration-20max-w-[300px]0  group relative  mb-10">
+                        className=" rounded-2xl  border-2  border-darkBrand duration-20max-w-[300px]0  group relative  mb-10">
                         {/*image section */}
-                          <div className=" h-[122px]">
+                          <div className="">
                             <img src={data.img} alt=""
-                            className="max-w-[200px] block mx-auto transform translate-y-14 group-hover:scale-110 rotate-2 rounded-xl  group-hover:rotate-0 duration-30 
+                            className="max-w-48  block mx-auto transform translate-y-14 group-hover:scale-110 rotate-2 rounded-xl  group-hover:rotate-0 duration-30 
                             "
                             />
                           </div>
                           {/*detail section of the projects*/}
-                          <div className=" pt-20  text-white">
+                          <div className=" pt-20  text-darkBrand">
                             <h1 className="text-center text-3xl md:text-2xl sm:text-2xl">{data.name}</h1>
                                 <div className=" text-center py-3 px-4">
                                     <p className=" text-start">{data.description}</p>
                                     <a href={data.link} 
                                     className=" pt-5">
-                                    <button className=" mt-7 bg-gradient-to-r from-secondary to-primary border-2 border-secondary rounded-full px-4 py-2 text-white hover:scale-105 duration-200 cursor-pointer ">check out</button>
+                                    <button className=" mt-7 bg-gradient-to-r from-secondary to-primary border-2 border-secondary rounded-full px-4 py-2 text-white hover:scale-105 duration-200 cursor-pointer"><FaArrowRight className='w-11' /></button>
                                     </a>
                                 </div>
                           </div>
