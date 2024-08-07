@@ -72,7 +72,7 @@ const Blog = () => {
                 className="block sm:hidden absolute top-0 left-0 h-full w-[6px] bg-secondary z-10"
               ></div>
               {/* Cards */}
-              <div id="Cards" className="relative flex flex-col items-center gap-8 mx-auto overflow-hidden">
+              <div id="Cards" className="relative flex flex-col items-center gap-3  overflow-hidden w-full">
                 {skills.map((skill, index) => (
                   <div
                     key={skill.id}
@@ -85,7 +85,7 @@ const Blog = () => {
                     <div 
                       onMouseEnter={() => handleSkillHover(skill.id)}
                       onMouseLeave={handleSkillLeave}
-                      className={` relative flex w-full flex-col  gap-3 bg-gradient-to-r from-secondary to to-secondary via-primary border-2 border-white rounded-b-3xl rounded-t-3xl ${skill.id % 2 === 0 ? ' rounded-tl-none': 'rounded-tr-none','sm:rounded-tl-3xl'} items-center justify-center ${skill.id % 2 === 0 ? 'sm:ml-72' : 'sm:mr-72'} ${skill.id % 2 === 0 ? 'lg:left-60' : 'lg:right-60'} p-2    text-white  rounded-lg shadow-md z-20 max-w-36 lg:max-w-md mr-14 ml-14`}
+                      className={` relative flex w-full flex-col  gap-3 bg-gradient-to-r from-secondary to to-secondary via-primary border-2 border-white rounded-b-3xl rounded-t-3xl ${skill.id % 2 === 0 ? ' rounded-tl-none': 'rounded-tr-none','sm:rounded-tl-3xl'} items-center justify-center ${skill.id % 2 === 0 ? 'sm:ml-64' : 'sm:mr-64'} ${skill.id % 2 === 0 ? 'lg:left-60' : 'lg:right-60'} p-2    text-white  rounded-lg shadow-md z-20 max-w-36 lg:max-w-md mr-14 ml-14`}
                       data-aos-delay={index * 100} // Adds delay to each skill card
                       data-aos-offset="100" // Starts animation when scrolled into view
                     >
